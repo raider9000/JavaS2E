@@ -20,12 +20,22 @@ public class Student {
 
     //The following demonstrates constructor overloading :- 
     public Student(int roll_no , double marks , String college){
-        this.roll_no = roll_no;
-        this.marks = marks; 
+        this(roll_no , marks); //this is a constructor chaining where another constructor is called within this constructor
         this.college = college;
     }
     //here , the Student constructor based on the actual parameters passed on the StudentDriver class
     //will determine which constructor will be chosen.
+
+
+    //The following also demonstrates the constructor chaining. 
+    //this(); is used to chain constructors within the same class , as the constructors here are 
+    //within the same class so , this(); function is used.  
+    public Student(int roll_no , double marks , String college , String name){
+        this(roll_no , marks , college); //as above we have a constructor that accepts roll_no , marks , college 
+        //so , we are simply passing the values to that constructor which is already defined , rather than
+        //again writing the code to manually store each and every value.
+        this.name  = name;
+    }
 
 }
 
