@@ -12,8 +12,20 @@ public class Student {
     //The following is the constructor of the class Student and this constructor now overrides the 
     //creation of the default constructor by the compiler. The constructor always executes first 
     //when the constructor calling statement in the main method is called to create the object.
-    public  Student(int roll , double mark){
+    public  Student(int roll , double marks){
         roll_no = roll;
-        marks = mark;
+        this.marks = marks; //example of the this keyword usage
     }
+    //when , using same names of identifiers in class , inside the constructor , use the this. keywoard.
+
+    //The following demonstrates constructor overloading :- 
+    public Student(int roll_no , double marks , String college){
+        this.roll_no = roll_no;
+        this.marks = marks; 
+        this.college = college;
+    }
+    //here , the Student constructor based on the actual parameters passed on the StudentDriver class
+    //will determine which constructor will be chosen.
+
 }
+
