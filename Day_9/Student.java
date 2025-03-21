@@ -31,7 +31,9 @@ public class Student {
     //this(); is used to chain constructors within the same class , as the constructors here are 
     //within the same class so , this(); function is used.  
     public Student(int roll_no , double marks , String college , String name){
-        this(roll_no , marks , college);
+        this(roll_no , marks , college); //as above we have a constructor that accepts roll_no , marks , college 
+        //so , we are simply passing the values to that constructor which is already defined , rather than
+        //again writing the code to manually store each and every value.
         this.name  = name;
     }
 
