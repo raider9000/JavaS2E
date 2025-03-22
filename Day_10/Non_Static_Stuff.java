@@ -27,4 +27,5 @@ public class Non_Static_Stuff {
 //where the static initializer is executed at the beginning before the main
 //method only once throughout the program. The non-static initializer is executed 
 //everytime an object is created , and it is called and executed after the object has loaded
+
 //regardless the object is used or not.
