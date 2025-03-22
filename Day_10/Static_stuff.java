@@ -14,7 +14,7 @@ public class Static_stuff {
 
     //A class can have multiple static blocks 
     //The execution of the blocks are according to the order that is 
-    //written. So the first static block is executed and the 2nd one 
+    //written in. So the first static block is executed and the 2nd one 
     //and so on.
     static{
         System.out.println("Inside the 2nd Multiline Static Block");
