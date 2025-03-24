@@ -1,3 +1,4 @@
+package Composition;
 public class Battery {
     String Type;
     int capacity;

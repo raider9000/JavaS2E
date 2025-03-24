@@ -1,3 +1,4 @@
+package Composition;
 public class Phone {
     String model_name; 
     int price; 

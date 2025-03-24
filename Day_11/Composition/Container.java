@@ -4,7 +4,7 @@
 //contained class in it. 
 
 //Everytime an object of the container class is made , the contained class obejct is also automatically created.
-
+package Composition;
 public class Container {
     String name; //attribute of the container class
     Contained C1; //Reference object of the contained class

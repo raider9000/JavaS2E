@@ -1,5 +1,6 @@
 //This is the contained class which holds the dependencies of the container 
 //class
+package Composition;
 public class Contained {
     String lastName; //attribute of the contained class
 
