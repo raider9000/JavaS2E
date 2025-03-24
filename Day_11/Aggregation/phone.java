@@ -22,6 +22,9 @@ public class phone {
 
     //method to display the contents. 
     public void display(){
-        System.out.println(name + " " + sim.sim_name + " " + sim.number);
+        //here , this.sim is used because it access the sim object within the current instance of the 
+        //phone. this.sim uses the current refrence , i.e the reference from the phone object reference to the 
+        //sim object reference inside the phone object.
+        System.out.println(name + " " + this.sim.sim_name + " " + this.sim.number);
     }
 }
