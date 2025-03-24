@@ -14,9 +14,21 @@
 //is mandatorily required in order to access the contained class. Contained class does not exisit independently
 //and needs the container class to exist. Hence , if the container class doesnot exist , then the 
 //container class also does not exist.
-public class DriverAssociations {
+public class DriverAssociations_Composition {
+    //Main method for driving the other classes
     public static void main(String args[]){
+
+        //object of the container class , where both the name and lastname is passed.
         Container C = new Container("Subho" , "Mukherjee");
+
+        //display method within the container class. 
         C.display();
     }
 }
+
+
+//here , the object of the container class is made in the main method and the 
+//contained class object is made within the container class , and this chained method of
+//object creation is called as associativity and this kind of association is called as COMPOSITION
+//and this kind of tighy binding is called as early binding , where the moment the object of the 
+//container class is created , the object of the contained class is also created within the container class. 
