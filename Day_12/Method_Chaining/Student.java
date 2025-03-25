@@ -17,6 +17,11 @@ public class Student {
 
         //this keyword 
     }
+
+    public Student Set_ID(int id){
+        this.id = id;
+        return this;
+    }
     
     public void display(){
         System.out.println(this.name + " " + this.id);
