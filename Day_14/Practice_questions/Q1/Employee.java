@@ -1,4 +1,4 @@
-package Day_14.Practice_questions;
+package Day_14.Practice_questions.Q1;
 
 public class Employee {
     String name;
@@ -10,7 +10,11 @@ public class Employee {
         this.Salary = Salary;
     }
 
-    public void getinfo(){
+    public void employeeinfo(){
         System.out.println(name + " : " + Salary);
+    }
+
+    public void job_role(){
+        
     }
 }
