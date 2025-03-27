@@ -1,4 +1,4 @@
-package Day_14.methodOverloading;
+package Day_14.non_primitive_Typecasting.upcast;
 //Here , in this class the method sound is overridden from the original parent class which is animal. 
 //in order to access the method of the parent class , then the super.method_name keyword is required in order to acess the parent's sound method. 
 public class Animal {
