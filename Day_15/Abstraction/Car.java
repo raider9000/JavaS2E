@@ -5,5 +5,7 @@ public class Car extends Vehicle{
     //It has to mandatorily override the abstract method inside the abstract class or become abstract class itself. 
     //as a child method overriding a parent method should either have a higher or same visibility
     //as the parent method its overriding , the void Start overriding here , has the default package level visibility as the Parent.
-    
+    void Start(){
+        
+    }
 }
