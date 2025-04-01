@@ -25,6 +25,11 @@ public class Employee {
     //overriding the equals method in the obejct super class 
     public boolean equals(Object o){ //!!!!![Very Important for Interviews]!!!!!
 
+        //the following checks first whether , the given object is of the same class , before downcasting and performing functions. 
+        //This reduces the chances of classcastException 
+        //This is a good practice before any sort of downcast , to check whether the passed object is same as the comparing object. 
+        //chekcing in e1.equals(e2) , checking whether e1 and e2 are both employee types or not. 
+        if(o instanceof Employee){
         //this is accepting the type of object super class objects. So every class being a child class of the object superclass , auto upcasts to the object superclass type.
         
         Employee e = (Employee)o; //This downcasts the obejct super class object type back to the employee class type of object. 
@@ -37,5 +42,9 @@ public class Employee {
         //So to compare strings , the above method of comparing strings if equal or not is used when overridding. 
 
         //here, this.id contains the memory reference of the e1 if e1.equals(e2) is used as , e1 is the object calling the equals method overridden in employee class.
-    }
+        
+    }return false;
+    
+}
+
 }
