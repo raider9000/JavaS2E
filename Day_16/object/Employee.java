@@ -31,7 +31,10 @@ public class Employee {
         //This is mandatorily required cause of static binding.
         
         //This is the overridden return type to compare based on the attributes rather than just simply the memory refrence 
-        return this.id == e.id && this.salary == e.salary; //returns a boolean cause of == operator. 
+        return this.id == e.id && this.salary == e.salary && this.name.equals(e.name); //returns a boolean cause of == operator. 
+
+        //To compare string , this.name gets the string variable and .equals is the String class equals method which is the object super class equals method overridden in String class. 
+        //So to compare strings , the above method of comparing strings if equal or not is used when overridding. 
 
         //here, this.id contains the memory reference of the e1 if e1.equals(e2) is used as , e1 is the object calling the equals method overridden in employee class.
     }
