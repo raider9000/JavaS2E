@@ -1,6 +1,8 @@
 package Day_16.object;
 //This class demonstrates the obejct super class in java , and its uses. 
-public class Employee {
+
+//implement of cloneable is required in order to use the abstract protected method of clone objects.
+public class Employee implements Cloneable{
     String name;
     String id;
     double salary;
@@ -44,7 +46,15 @@ public class Employee {
         //here, this.id contains the memory reference of the e1 if e1.equals(e2) is used as , e1 is the object calling the equals method overridden in employee class.
         
     }return false;
-    
-}
+        }
+
+    //overriding the innate hashcode method in the obejct super class , as per the specific needs.    
+    public int  hashCode(){
+        //simple hashcode method , to simply add 10 to the salary and produce hashes. 
+        return (int)(10 + this.salary);
+
+        //[Note :] the worst way to override the hashcode method is to use such a hashing function that returns the same hashed address for all the elements.
+        //This causes liner probing on a sinle block as a result the O(1) time complexity goes to O(n) as a result , because the entire daisy chained linked list for that block has to vbe traversed at O(n) time.
+    }   
 
 }

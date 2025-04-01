@@ -21,7 +21,10 @@ public class Driver {
 
         System.out.println(e1.equals(e2));//This also innately uses the == operator unless overridden in order for specific usage. 
 
-        
+        System.out.println(e1.hashCode()); //This generates the hashcode based on the memory reference of the object. This is innately written in the Object super class method, which every object inherits.
+
+        Employee e3 = new Employee("Something", "id", 0);
+        //Object e4 = new Employee("blahblah", "garbage", 0);
 
 
     }
