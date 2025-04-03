@@ -40,11 +40,14 @@ public class throw_throws {
             //As defined , this is a SQLException but can be any other exception as long as it is a checked exception and defined above in the method declaration.
             //This message is passed to the constructor of the SQLException class , which when executed in the runtime will show this message in the terminal window during runtime
             throw new SQLException("Denominator cannot be zero");
+
+            //for one throw keyword , only one exception can be thrown
         }
         else{
             System.out.println(x/y);
         }
     }
-
+    //[Note :-] the throw keyword needs to throw only unchecked exceptions , throwing a checked exception will not work as checked exception needs to be explicitly handled. 
+    //Throwing a checked exception and handling that same exception in that method makes no sense and compiler will generate an error , as the checked exception needs to be handled by the caller of that method explicitly.
 
 }
