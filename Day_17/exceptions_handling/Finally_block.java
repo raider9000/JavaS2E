@@ -9,7 +9,7 @@ public class Finally_block {
             int x = sc.nextInt();
             int y = sc.nextInt();
             System.out.println(x/y);
-            sc.close();
+            sc.close();  
         }
         catch(Exception e){
             System.out.println("Exception Handled");
