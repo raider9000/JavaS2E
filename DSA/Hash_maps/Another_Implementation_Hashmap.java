@@ -66,44 +66,38 @@ public class Another_Implementation_Hashmap {
         public void remove(int key){
             int index = getBucketIndex(key);
 
-            //creating a temporary node head , in order to traverse the linked list
-            //at the index position of the array 
-            Entry head = bucket[index];
-
-            //returning -1 when the bucket is empty
-            if(head == null){
-                System.err.println("Wrong key pair given! , Nothing to remove");
-                return;
-            }
-            //if the bucket is not empty , then checking for the key in the linked list at the index of the array
-            while(head != null){
-                if(head.key == key){
-                    System.out.println("Removed the key|value pair " + head.key + " : " + head.value);
-                    bucket[index] = head.next;
-                    //removing the head of the linked list
-                    //and making the next element as the head of the linked list
-                    //this is done as hashmap doesnt allow duplicate keys
-                    head.next = null;
-                    //this is done to remove the reference of the head from the linked list
-                    //and making the next element as the head of the linked list
-                    head = null;
-                    //this is done to remove the reference of the head from the linked list and so the garbage collecter will remove it. 
+            Entry current = bucket[index];
+            Entry previous = null;
+            while(current != null){
+                if(current.key == key){
+                    //if the key is found , then check if it is the first element of the linked list
+                    if(previous == null){
+                        previous = current;
+                        bucket[index] = current.next;
+                        previous.next = null;
+                    }else{
+                        previous.next = current.next;
+                        current.next = null;
+                    }
                     return;
                 }
-                head = head.next;
-            } 
+                previous = current;
+                current = current.next;
+            }
+           
         }
 
         //simple method to display te key and value pairs stored in the hashMap 
-        public void Display(){
+        public void display(){
             for(int i = 0 ; i < bucket.length ; i++){
                 Entry head  = bucket[i];
+                
                 System.out.print("Index " + i + " : ");
                 while(head != null){
                     System.out.println("Key : " + head.key + "\tValue : " + head.value);
                     head = head.next;
                 }
                 System.out.println();
-            }
+        }
         }
 }
