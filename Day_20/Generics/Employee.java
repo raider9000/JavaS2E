@@ -1,8 +1,11 @@
 package Day_20.Generics;
+//This class deals with the concept of using generics in java
+
 //The <Employee> is a generic type parameter that allows the class to be used 
 //to only accept Employee objects in the compareTo method , not any other objects
 //As the comparable interface is now explicitly implemented to only accept 
 //Employee type obejcts. 
+
 public class Employee implements Comparable<Employee> {
     int id;
     String name;
