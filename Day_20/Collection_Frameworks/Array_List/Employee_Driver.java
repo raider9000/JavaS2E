@@ -78,7 +78,10 @@ public class Employee_Driver{
             //The .nextindex() method returns the index of the next element in the ArrayList 
             //all next methods and nextIndex has to be used because by default the pointer during the start points to the -1 index , outside of the arrayList.
             System.out.println("Index : " + li.nextIndex());
-            System.out.println("ID: " + ((Employee)li.next()).getId() + ", Name: " + ((Employee)li.next()).getName() + ", Salary: " + ((Employee)li.next()).getSalary());
+
+            //Always take a temporary Employee variable to iterate over usiing iterator and listIterator
+            Employee e = li.next(); //This will get the employee object
+            System.out.println("ID: " + e.getId() + ", Name: " + e.getName() + ", Salary: " + e.getSalary());
         }
 
         System.out.println("----------------------------------------------------");
