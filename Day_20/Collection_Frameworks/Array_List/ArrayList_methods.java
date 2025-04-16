@@ -1,4 +1,4 @@
-package Day_20.Collection_Frameworks;
+package Day_20.Collection_Frameworks.Array_List;
 
 import java.util.ArrayList;
 
