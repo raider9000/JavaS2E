@@ -38,10 +38,32 @@ public class Employee_Driver{
 
         //Using the iterator interface to modify the elements during loop
         Iterator<Employee> iterator = emp.iterator(); //This is an iterator object which is used to iterate the elements of the ArrayList
+        //[Note :] The iterator is an interface and objects of interfaces are not possible to be made 
+        //but here , the object of the iterator is created by using the ArrayList class , 
+        //The ArrayList obejct here is then upcasted to the Iterator interface.
+        //Interally an object of the iterator is created using the arraylist and this object gets upcasted and uses the methods of the iterator interface. 
+        
+        //This is why iterator interface does not have to explicitly impletemnted in this class.
+
+        //[Note :] hasNext() method is used to check if there is any next element in the ArrayList
+        //[Note :] next() method is used to get the next element of the ArrayList by moving the pointer to the next element
+        //[Note :] remove() method is used to remove the current element of the ArrayList
+        //All the above methods have to be used on the iterator type object only and not on the ArrayList type object
 
         while (iterator.hasNext()) { //This will check if there is any next element in the ArrayList
             Employee e = iterator.next(); //This will get the next element of the ArrayList
-            e.setId(0); //This will set the id of the employee to 0
+            //e.setId(0); //This will set the id of all the employee to 0
+
+            int x = e.getId(); //This will get the id of the employee
+            if(x == 102){
+                iterator.remove(); //This will remove the current element of the ArrayList
+                //based on the condition given in the if statement
+            }
+            System.out.println("ID: " + e.getId() + ", Name: " + e.getName() + ", Salary: " + e.getSalary());
+        }
+        //This will print the employee list after removing the employee with id 102
+        System.out.println("After removing the employee with id 102");
+        for (Employee e : emp) {
             System.out.println("ID: " + e.getId() + ", Name: " + e.getName() + ", Salary: " + e.getSalary());
         }
 
