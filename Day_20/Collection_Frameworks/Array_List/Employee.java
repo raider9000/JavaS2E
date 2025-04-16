@@ -1,6 +1,6 @@
 package Day_20.Collection_Frameworks.Array_List;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private int id;
     private String name;
     private double Salary;
@@ -35,6 +35,16 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee [id=" + id + ", name=" + name + ", Salary=" + Salary + "]";
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        //This method is used to compare the objects of the class
+        //This method is used to sort the objects of the class
+        //This method is used to compare the objects of the class based on the id
+        //This method is used to sort the objects of the class based on the id
+        return this.id - o.id; //This will compare the id of the objects
+        //and will sort using the ids 
     }
 
     //-----------------------------------------------------------------------------------------------

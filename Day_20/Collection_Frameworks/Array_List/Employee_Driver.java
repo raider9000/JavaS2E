@@ -1,5 +1,6 @@
 package Day_20.Collection_Frameworks.Array_List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator; //Using th eiterator interface in order to modify the elements during loop 
 import java.util.ListIterator;
 public class Employee_Driver{
@@ -99,5 +100,30 @@ public class Employee_Driver{
                 //The .add() method is used to add an element in the ArrayList
             }
         }
+
+
+        //Simple demonstration of sorting of the arraylist storing integer objects 
+        //Sorting of the list
+
+        ArrayList<Integer> a1 = new ArrayList<Integer>();
+        a1.add(1);
+        a1.add(2);
+        a1.add(34);
+        a1.add(23);
+        a1.add(45);
+
+        //Now trying to sort the list , we need a seperate sorting method as Arraylist can store heterogeneous types of data. 
+
+        Collections.sort(a1); //This will sort the ArrayList in ascending order
+        //For this .sort to work , the obejct of the class stored in the ArrayList should implement the comparable interface , else it wont work and throw an exception.
+
+
+        //now as the comparable interface is implemented in the employee class  , so Collections.sort(emp)
+        //will work and call the compareTo method of the employee class to sort the employee objects in the arraylist. This would work implicitly on String object filled arraylist as String has an overridden method of compareTo and implemented the comparable interface by default. 
+
+        Collections.sort(emp); //This will sort the ArrayList in ascending order based on the id of the employee , by calling the overridden compareTo method of the employee class.
+        //Whatever comparing logic is defined in the overridden equals method , will take place here 
+        //and sort based on that logic. 
+
     }
 }
