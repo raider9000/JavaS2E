@@ -1,4 +1,4 @@
-package Day_20.Collection_Frameworks.Sets;
+package Day_20.Collection_Frameworks.Sets.Tree_Set;
 public class Employee implements Comparable<Employee>{
     int salary;
     String Name;

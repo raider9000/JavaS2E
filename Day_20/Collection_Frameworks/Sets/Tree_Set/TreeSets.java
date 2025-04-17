@@ -1,4 +1,4 @@
-package Day_20.Collection_Frameworks.Sets;
+package Day_20.Collection_Frameworks.Sets.Tree_Set;
 //This is a simple treeset code
 import java.util.TreeSet; 
 public class TreeSets {
