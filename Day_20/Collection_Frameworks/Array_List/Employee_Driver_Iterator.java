@@ -3,7 +3,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator; //Using th eiterator interface in order to modify the elements during loop 
 import java.util.ListIterator;
-public class Employee_Driver{
+
+
+//[Note :] Iterator copies the content of the ArrayList or any other collections object contents into a 
+//an iterator object. This iterator object having the exact copy of the elements of the collections objects passed to it 
+//and also has a pointer with which the elements can be traversed or manipulated inside the iterator object copy only 
+//not the actual Collection object.
+
+
+public class Employee_Driver_Iterator{
     public static void main(String[] args) {
         ArrayList<Employee> emp = new ArrayList<Employee>();
         Employee e1 = new Employee(101, "John", 50000);
