@@ -48,23 +48,39 @@ public class TreeSets {
 
         //now using it by implemeting the comparator , for comparator we need to make a new class 
         //implementing comprator and then override the compare method there. Then make the object of the 
-        //comparator implemented class and 
+        //comparator implemented class and pass that object to the constructor of the TreeSet.
+        //Now based on the logic on the compare method of the class implementing the comparator interface 
+        //The sorting innately will be done on that. The TreeSet calls the compare method implicitly 
+        //to sort it by default. 
+        //As the sorting logic in the comparator implemented class is to sort the salaries on desencding order 
+        //hence the values in the TreeSet is in descending order because of passing the comparator object in 
+        //the constructor of the TreeSet object.
 
+
+        //Creating the object of the Comparator implemented Class
         Compare_opp cpp = new Compare_opp();
+
+        //Passing the object of the Comparator implemented class in the constructor of the TreeSet
+        //This makes the TreeSet to sort based on the logic defined in the comparator class overridden
+        
+        //Object creation of the TreeSet
         TreeSet<Employee> newTS = new TreeSet<>(cpp);
 
+        //Making the Employee objects 
         Employee m = new Employee(12343, "Hi");
         Employee n = new Employee(2113 , "Something");
         Employee p = new Employee(1234 , "Blah");
         
+        //Adding the Employee objects 
         newTS.add(m);
         newTS.add(n);
         newTS.add(p);
 
+        //Printing the TreeSet
         System.out.println(newTS);
 
     }
     
-
+    //[Note :] Check the other methods of the TreeSet in the oracle documentation 
 
 }
