@@ -4,8 +4,9 @@ import java.util.ArrayDeque;
 
 //This class deals with arraydequeue 
 public class Dequeue_Arrays {
-    //basically doubly linked queue and everythig same as queue 
+    //basically doubly linked queue and everything same as queue 
     public static void main(String[] args) {
+        //accepting object type of elements , not any specified type
         ArrayDeque ad = new ArrayDeque<>();
         ad.add(10);
         ad.add("String");
