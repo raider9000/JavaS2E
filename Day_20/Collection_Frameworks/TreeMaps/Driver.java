@@ -83,7 +83,10 @@ public class Driver {
         //for a set such as 
         ///Set<Entry<Integer , String>> s = map.entrySet(); //The Set definition that takes Entry based object. 
         //example for(Entry<Integer , String> e : s ){} //The for each loop
-        //if used for(O o : s){} // Will take it as an Object super class type and will not treat it as an Entry type. 
+        //if used for(O o : s){} // Will take it as an Object super class type and will not treat it as an Entry type.
+        //To be safe , always downcast the classes back to the type being used needed. That's all 
         
+        
+         
     }
 }
