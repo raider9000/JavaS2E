@@ -42,7 +42,8 @@ public class Driver {
         Collections.sort(l1 , comp);
         System.out.println(l1);
     }
-
+    
+    
     //[Note : ] The lambda expression basically is the body of the abstract method of the functional interface.
     //So whatever was meant to be written in a seperate class or by overriding , this is done directly within the function or specific place where such an implementation is required without making
     //another class for overriding the functional interface method. 
