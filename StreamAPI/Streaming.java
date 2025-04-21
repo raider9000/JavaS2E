@@ -108,10 +108,45 @@ public class Streaming{
         //Now writing the code to filter out the even numbers in the stream 
         l1.stream().distinct().filter((n) -> n%2 == 0).forEach((n) -> System.out.print("\n" + n + " "));
         //Here a Stream object is returned everytime , so we want to convert the stream back to a List
+        System.out.println();
 
         List<Integer> li = l1.stream().distinct().filter((n) -> n%2 == 0).toList();
         //The above now stores the result inside the List li. 
+        System.out.println(li);
+        //Sameway , toArray() produces an array type as a return 
+
+
+        //Now finding the first element of the Stream elements 
+        Optional<Integer> op = li.stream().findFirst();
+        System.out.println(op.get()); //This gets the first element inside the Stream 
+
+        //Same for finding a random element 
+        System.out.println(l1.stream().findAny().get()); //Directly gives an Integer type of object
+
+        //Same but to find the count of elements in the Stream
+        System.out.println(l1.stream().count());
+
+
+        //Conacatenation of different types of Obejcts
+        List<String> strings = Arrays.asList("HI" , "Hello" , "YO");
+        List<Integer> ints = Arrays.asList(1 ,2 ,3);
+
+        Stream<String> s1 = strings.stream();
+        Stream<Integer> s3 = ints.stream();
+
+        Stream.concat(s1 , s3).forEach(n->System.out.print(n + " "));
+        System.out.println();
+        //The above has concatenated the different Streams and returned a stream type of obejct 
+
+        //using the allMatch() , method to check whether any element inside the Stream satisfies the given condition. If all the elements satisfies the condition , only then boolean True is returned. 
+        System.out.println(l1.stream().distinct().allMatch(n->n%2==0));
+        //If all the elements inside the Stream is divisible by 2 only then true is returned else false
+
+        //Using anyMatch(); , just the opposite of the allMatch(); if any of the elements satisfy the condition , then it will return true else if no element satisfy then false. 
+        System.out.println(l1.stream().distinct().anyMatch(n->n%2==0));
+
         
+
     }   
     
 }
