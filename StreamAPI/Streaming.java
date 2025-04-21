@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.*;
 import java.util.Optional;
+import java.util.OptionalDouble;
 //This class deals with the usage of the Stream API inside the Java.Util package
 //[Note : ] Stream is an interface that can be used after impoerting it from the 
 //util package. 
@@ -145,8 +146,10 @@ public class Streaming{
         //Using anyMatch(); , just the opposite of the allMatch(); if any of the elements satisfy the condition , then it will return true else if no element satisfy then false. 
         System.out.println(l1.stream().distinct().anyMatch(n->n%2==0));
 
+        //SOME EXAMPLES FOR STREAMS :- 
         
 
+        
     }   
     
 }
