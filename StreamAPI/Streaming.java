@@ -9,6 +9,10 @@ public class Streaming{
     //[Note : ] Streams are stateless , as a result it will not alter the original collection 
     //It will return a new Stream everytime. 
     public static void main(String[] args) {
+
+        //[Note : ] This is a simple impementation of a Stream. 
+        //Generally pipeline checkpoints are used , but here suing different Stream references to perform the operations. 
+
         //Creating a list and using asList inside Arrays in order to store a List
         List<Integer> l1 = Arrays.asList(1 , 2, 5, 7, 8 , 7 , 4 , 3 , 1);
 
@@ -34,6 +38,38 @@ public class Streaming{
         //n->(S.O.P(n)) means that in the method , directly the single line logic is passed to the interface. 
         s2.forEach(n->System.out.println(n));//Prints the distinct elements 
 
+        //[Note : ] Any method that accepts a functional Interface is a Higher Order Function.
 
+        //On printing the original List , we can see that nothing is modified , This is the Stateless property of Streams.
+        System.out.println(l1);
+
+
+
+        //Now using the pipelines on Streams :-
+        
+        //Performing oeprations on Streams return a new Stream and the old Stream is closed and deleted by the garbage collector. 
+        
+        //Using method chain to pipeline the operations 
+        l1.stream().distinct().forEach(n->System.out.println(n));
+
+        //if using a custom interface example :-
+        ///interface Consumer<T>{
+        /// void accept(T t);
+        ///}
+        /// Then the code for the Stream is :-
+        /// Consumer<Integer> c = n -> System.out.println(n);
+        /// //Passing the Interface reference to the forEach(); Higher order function. 
+        /// l1.stream().forEach(c);
+        /// 
+        /// The above is the same as l1.stream().forEach(n->System.out.println(n));
+        /// but for custom interfaces , The lambda expression now targets the Consumer 
+        /// interface abstract method. 
+        
+        //[Note : ]Lambda expressions are anonymous method , this creates an anonymous class , and an anonymous object is created of that class and that reference of that anonymous class
+        //is stored in the interface reference , example :- 
+        //Demo d = () -> S.o.p("Hello"); , the anonymous class reference is stored in the Interface reference d , as objects of interfaces are not possible. 
+        
+        
     }   
+
 }
