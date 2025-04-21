@@ -2,6 +2,7 @@ package StreamAPI;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.*;
+import java.util.Optional;
 //This class deals with the usage of the Stream API inside the Java.Util package
 //[Note : ] Stream is an interface that can be used after impoerting it from the 
 //util package. 
@@ -69,7 +70,48 @@ public class Streaming{
         //is stored in the interface reference , example :- 
         //Demo d = () -> S.o.p("Hello"); , the anonymous class reference is stored in the Interface reference d , as objects of interfaces are not possible. 
         
+        //forEach method returns void , so that chained Stream cannot be stored in a new Stream. 
+
+
+        //Way of fetching the minimum element, same way use .max(lambda exp) , in order to find the maximum element ((o1 , o2) -> o2-o1);
+
+        System.out.println("------------------------------------------------");
+        
+        //This is using the optional interface nad using its reference in order to store the stream reference.
+        //Optional class is a class for holding the objects , and help in handling the null values 
+        //So that nullpointerExceptions are handled. 
+        Optional<Integer> op1 = l1.stream().distinct().min((o1 , o2) -> o1-o2);
+        
+        //The isPresent() method will return null , if the element is not present. 
+        if(op1.isPresent()){
+            System.out.println(op1.get());
+        }
+
+        //The following returns an Integer object. 
+        Integer a = l1.stream().distinct().max((o1 , o2) -> o1-o2).get();
+        System.out.println(a);
+
+        //Some other methods :- 
+        l1.stream().sorted().forEach((n)->System.out.print("\n" + n+ " ")); //This method also returns a stream
+        //so using forEach to print the elements with a lambda function 
+        
+        //using sorted to print in descending order :-
+        l1.stream().sorted((o1 , o2) -> o2-o1).forEach((n) -> System.out.print("\n" + n + " "));
+        //Passing a lambda function with the logic to sort in the descending order to the sorted() method
+        //The sorted method also accepts a comparator , that is passed with a lambda function. 
+
+        //Now writing a code for the stream to first remove duplicates , sort in ascending , multiply each element with itself and then print it out. 
+        //the map() , allows for the iteration over each of the elements in the stream , and accepts a method , which makes it a higher order function. 
+        l1.stream().distinct().sorted().map((n) -> n*n).forEach((n) -> System.out.print("\n" + n + " "));
+
+
+        //Now writing the code to filter out the even numbers in the stream 
+        l1.stream().distinct().filter((n) -> n%2 == 0).forEach((n) -> System.out.print("\n" + n + " "));
+        //Here a Stream object is returned everytime , so we want to convert the stream back to a List
+
+        List<Integer> li = l1.stream().distinct().filter((n) -> n%2 == 0).toList();
+        //The above now stores the result inside the List li. 
         
     }   
-
+    
 }
