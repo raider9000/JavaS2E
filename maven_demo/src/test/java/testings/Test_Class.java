@@ -1,6 +1,6 @@
 package testings;
 
-//These are static packages , thats why it has to be import static 
+//These are static methods , thats why it has to be import static 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -13,7 +13,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertThrows;
 
 //This is the new hasItem package , do not use the one inside jUnit package
-import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.hasItem; //for single item check
+import static org.hamcrest.CoreMatchers.hasItems; //for multiple item check    
 
 import java.util.Arrays;
 import java.util.List;
@@ -119,6 +120,7 @@ public class Test_Class {
     @Test
     public void checkNotNull(){
         //passess if not null 
+
         assertNotNull(utils.returnString("Hello"));
     }
 
