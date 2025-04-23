@@ -1,5 +1,6 @@
 package reflection_API_stuffs;
 
+//importing the different reflection methods 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -48,12 +49,14 @@ public class EmployeeDriver {
         //For printing the method names 
         for(Method m : methods) System.out.println(m.getName());
         
-        //For printing out the methods which are overridden 
+        //For printing out the methods which have different annotations 
         for(Method m : methods){
+            //This wont work as override annotation is a compile time detection and not runtime 
+            //So Reflection API cannot access this and different plugins are required to access this
             if(m.isAnnotationPresent(Override.class)) System.out.println(m.getName());
             
             //For the Deprecated annotation 
-            //if(m.isAnnotationPresent(Deprecated.class)) System.out.println(m.getName());
+            if(m.isAnnotationPresent(Deprecated.class)) System.out.println(m.getName());
 
             //Similarly for different annotations
         }
