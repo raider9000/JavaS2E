@@ -1,12 +1,23 @@
 package testings;
+
+//These are static packages , thats why it has to be import static 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertThrows;
+
+//This is the new hasItem package , do not use the one inside jUnit package
+import static org.hamcrest.CoreMatchers.hasItem;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.Before;
@@ -22,6 +33,7 @@ public class Test_Class {
     
     Test_Utils utils;
 
+    //only method with @Test will get tested and ones without the annotation will not get tested 
 
     //During running of the test case , the before annotation makes this block run at the beginning of the test case. 
     //The before and after annotated methods will run before and after each test block with @test annotation 
@@ -94,7 +106,49 @@ public class Test_Class {
 
         //If no such excpetion mentioned is thrown , then the test case is considered to be failed.
         //Unless exception is thrown , the test will always become negative  
+        
         assertThrows(ArithmeticException.class, () -> utils.divide(12, 0));
+    }
+
+    @Test
+    public void checkNUll(){
+        //passes if it is null
+        assertNull(utils.returnString("Hi"));
+    }
+
+    @Test
+    public void checkNotNull(){
+        //passess if not null 
+        assertNotNull(utils.returnString("Hello"));
+    }
+
+    @Test
+    public void checkSame(){
+        List<Integer> input = Arrays.asList(2 , 5, 6, 7, 8 , 1);
+        List<Integer> output = new ArrayList(utils.checkSameListAfterModifying(input));
+
+        //Here it will fail as the Lists are different so the references of each of the elements inside the 
+        //List is different , even if the element itself is same value wise. 
+        assertSame(output, input);
+
+    }
+
+    @Test
+    public void checkNotSame(){
+        List<Integer> input = Arrays.asList(2 , 5, 6, 7, 8 , 1);
+        List<Integer> output = new ArrayList(utils.checkSameListAfterModifying(input));
+
+        //This will pass as they are not same , explained above 
+        assertNotSame(output, input);
+    }
+
+    @Test
+    public void checkMatcherInList(){
+        List<String> input = Arrays.asList("Tom" , "Jerry" , "Spike");
+        List<String> output = utils.checkMatchers(input);
+
+        //checkMatchers returns toUpperCase of the elements , so this would fail. 
+        assertThat(output, hasItem("Tom"));
     }
 
     @After

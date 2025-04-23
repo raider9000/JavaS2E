@@ -1,4 +1,5 @@
 package com.example;
+import java.util.Collections;
 import java.util.List;
 //This is the source file which has the methods that will be tested with jUnit 
 
@@ -24,5 +25,22 @@ public class Test_Utils {
         if(y!=0) return x/y;
         if(y == 0) throw new java.lang.ArithmeticException();
         else return -1;
+    }
+
+    //This returns the String only if the String starts with "H"
+    public String returnString(String s){
+        if(s.startsWith("H")) return s;
+        else return null;
+    }
+
+    //returns the sorted list 
+    public List<Integer> checkSameListAfterModifying(List<Integer> list){
+        Collections.sort(list);
+        return list;
+    }
+
+    //returns the String list by making all the characters in UPPERCASE
+    public List<String> checkMatchers(List<String> list){
+        return list.stream().map(String::toUpperCase).toList();
     }
 }
