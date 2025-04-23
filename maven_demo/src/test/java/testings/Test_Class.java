@@ -1,7 +1,9 @@
 package testings;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThrows;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +14,9 @@ import org.junit.Test;
 
 //We have to import the source file from the folder structure 
 import com.example.Test_Utils;
+
+//[Note : ] Even if a single assert method fails , then the entire test_case is considerd to have been failed 
+//every single assert method has to be true in order to consider that the entire test case has passed. 
 
 public class Test_Class {
     
@@ -42,6 +47,7 @@ public class Test_Class {
     //These are custom testcase methods and the assertNotEquals are jUnit static methods that are imported 
     //in order to pass the values to check with expected and actual. 
     public void assertNotEqualsAddition(){
+        //Scanner can also be used to pass the values and checked. 
         int result = utils.add(12 ,123);
 
         // passes if the given value does not match the output value 
@@ -49,7 +55,7 @@ public class Test_Class {
     }
 
     @Test
-    public void assertCheck(){
+    public void assertChecks(){
         List<Integer> data = Arrays.asList(1 ,2 ,3 ,4);
         List list = utils.returnList(data);
         for(Object o : list){
@@ -59,6 +65,36 @@ public class Test_Class {
             //This test case fails as not every element in the List is divisible by 2 
             //assertTrue(i%2==0);
         }
+    }
+
+    @Test
+    public void checkSortedList(){
+        List<Integer> input = Arrays.asList(5 , 4, 2 ,346 , 43);
+        List<Integer> expected = Arrays.asList(2 ,4 ,5 ,43 , 346);
+        List<Integer> actual = utils.sorterd(input);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void checkEqualsArray(){
+        int arr1[] = {1 ,2 ,3 ,4, 6};
+        int arr2[] = {1 ,2 ,3 , 356 , 3};
+
+        //This checks the arrays for each of the elements are same in both the arrays 
+
+        //This test will fail as 4 != 356 
+        assertArrayEquals(arr1, arr2);
+    }
+
+
+    @Test
+    public void CheckExceptions(){
+        //This class throws an exception using assertThrows 
+        //It takes an arugement of an exception class and the method inside a lambda expression 
+
+        //If no such excpetion mentioned is thrown , then the test case is considered to be failed.
+        //Unless exception is thrown , the test will always become negative  
+        assertThrows(ArithmeticException.class, () -> utils.divide(12, 0));
     }
 
     @After
