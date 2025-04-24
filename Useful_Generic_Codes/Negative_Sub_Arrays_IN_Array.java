@@ -1,4 +1,6 @@
+package Useful_Generic_Codes;
 import java.util.Scanner;
+
 //this code calculates the number of negative subarrays in a user given array
 public class Negative_Sub_Arrays_IN_Array {
     public static void main(String[] args) {
