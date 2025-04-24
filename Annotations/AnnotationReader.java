@@ -7,6 +7,7 @@ public class AnnotationReader {
     MyService service = new MyService();
     Class<?> clazz = service.getClass();
 
+    //To fetch the annotation 
     for (Method method : clazz.getDeclaredMethods()) {
     if (method.isAnnotationPresent(Info.class)) {
     Info info = method.getAnnotation(Info.class);

@@ -1,5 +1,5 @@
 //problem number 852 in leetcode
-
+package Useful_Generic_Codes;
 //An array which resembles a mnountain peak is given , [0 , 1 , 12 (peak) , 3, 4,3]
 //here , the peak is at 12 at index 2. We have to find the peak at log n time
 //The solution is to apply binary search on the array and solve it as such.

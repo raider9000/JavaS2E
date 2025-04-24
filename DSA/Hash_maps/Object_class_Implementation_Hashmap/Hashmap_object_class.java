@@ -1,5 +1,5 @@
 package DSA.Hash_maps.Object_class_Implementation_Hashmap;
-
+//This code is unfinished for now 
 public class Hashmap_object_class {
     Entry bucket[] = new Entry[16];
     public int getBucketIndex(Object key){
